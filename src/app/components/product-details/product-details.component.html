@@ -1,0 +1,22 @@
+<div class="container" *ngIf="product$ | async as product">
+  <div class="body">
+    <div class="imageBlock">
+      <img src="{{product.image}}" alt="picture">
+    </div>
+    <div class="description">
+      <p>Title — {{product.title | titlecase}}</p>
+      <p>Author — {{product.author}}</p>
+      <p>Jenre — {{product.jenre}}</p>
+      <p>Price — {{product.price | currency}}</p>
+      <p>Pages — {{product.details.pages}}</p>
+      <br>
+      <hr>
+      <p>Year of publication — {{product.details.yearOfPublication}}</p>
+      <p>Cover — {{product.details.cover}}</p>
+      <p>Language — {{product.details.language}}</p>
+    </div>
+  </div>
+  <br>
+  <hr>
+  <div>{{product.details.description}}</div>
+</div>

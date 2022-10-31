@@ -1,0 +1,18 @@
+<mat-toolbar class="container" color="primary">
+  <button class="home" routerLink="/">
+    <mat-icon class="home-icon">home</mat-icon>
+  </button>
+  <span class="example-spacer">Book Shop</span>
+  <div class="menu">
+    <button *ngIf="!checkIsLoginIn()" routerLink="login" mat-flat-button color="primary">Login</button>
+    <button *ngIf="checkIsLoginIn()" (click)="logout()" routerLink="login" mat-flat-button
+      color="primary">Logout</button>
+    <button *ngIf="!checkIsLoginIn()" routerLink="registration" mat-flat-button color="primary">Registration</button>
+    <button class="menu__item">
+      <mat-icon class="menu__icon">favorite</mat-icon>
+    </button>
+    <button class="menu__item">
+      <mat-icon class="menu__icon">shopping_cart</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

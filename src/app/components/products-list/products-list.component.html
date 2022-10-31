@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="input">
+    <input placeholder="Search by Title or Author" [(ngModel)]="searchValue" type="text">
+  </div>
+  <div class="sort__content">
+    <div class="menu">
+      <div class="label-title">
+        <mat-icon class="icon">filter_list</mat-icon>
+        <span>Filter Data</span>
+      </div>
+      <button [ngClass]="{class1: isPriceValue, class2: !isPriceValue}" mat-raised-button
+        (click)="isPriceValue = !isPriceValue" (click)="sortBy('price')">Price from {{isPriceValue ?
+        'expensive to cheap' : 'cheap to expensive'}}</button>
+      <button [ngClass]="{class1: isRateValue, class2: !isRateValue}" mat-raised-button
+        (click)="isRateValue = !isRateValue" (click)="sortBy('rate')">Rate from {{isRateValue ?
+        'low to high' : 'high to low'}}</button>
+      <button [ngClass]="{class1: isAuthorValue, class2: !isAuthorValue}" mat-raised-button
+        (click)="isAuthorValue = !isAuthorValue" (click)="sortBy('author')">Author From {{isAuthorValue ? 'Z - A' :
+        'A - Z'}}</button>
+      <button [ngClass]="{class1: isTitleValue, class2: !isTitleValue}" mat-raised-button
+        (click)="isTitleValue = !isTitleValue" (click)="sortBy('title')">Title From {{isTitleValue ? 'Z - A' :
+        'A - Z'}}</button>
+    </div>
+    <div class="content" *ngIf="products$ | async as products">
+      <app-product-item class="card" [product]="product" *ngFor="let product of products
+      | filterProducts: searchValue | sortProducts: sortingColumn: isDesc">
+      </app-product-item>
+    </div>
+  </div>
+</div>

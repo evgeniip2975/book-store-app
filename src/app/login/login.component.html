@@ -1,0 +1,27 @@
+<main>
+  <div class="circle">
+    <form class="register-form-container" [formGroup]="loginForm" (submit)="loginSubmit()">
+      <h1 class="form-title">Login</h1>
+      <div class="form-fields">
+        <div class="form-field">
+          <p *ngIf="this.loginForm.get('email')?.invalid && this.loginForm.get('email')?.touched"><mat-error>Email is
+            required</mat-error></p>
+          <input matInput formControlName="email" type="email" type="text" placeholder="Email">
+        </div>
+        <div class="form-field">
+          <p *ngIf="this.loginForm.get('password')?.invalid && this.loginForm.get('password')?.touched"><mat-error> Password is
+            required
+            (min. length = 8)</mat-error></p>
+          <input formControlName="password" type="password" type="text" placeholder="Password">
+        </div>
+      </div>
+      <div class="form-buttons">
+        <button [disabled]="this.loginForm.invalid" class="button" mat-raised-button color="primary">Login</button>
+        <div class="divider">or</div>
+        <a routerLink="/" class="button button-google">Google</a>
+      </div>
+      <button routerLink="/" class="button-close">&times;</button>
+    </form>
+  </div>
+</main>
+

@@ -1,0 +1,32 @@
+.container {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.example-spacer {
+  margin: 0px 0px 0px 10px;
+  flex: 1 1 auto;
+}
+.home {
+  margin: 0px 5px 0px 0px;
+  margin: 0px 0px 0px 80px;
+}
+.home-icon {
+  cursor: pointer;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+}
+.menu__icon {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.menu__item {
+  margin: 0px 0px 0px 5px;
+  &:first-child {
+    margin: 0px;
+  }
+}
