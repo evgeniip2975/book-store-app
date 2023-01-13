@@ -1,0 +1,32 @@
+.container {
+  margin: 70px 0px 0px 0px;
+  background-color: rgb(229, 230, 236);
+  .body {
+    position: relative;
+    margin: 10px 40px 0px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgb(130, 132, 145);
+  }
+  .descriptionBlock {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+  .imageBlock {
+    img {
+      max-width: 100px;
+      margin: 0px 0px 0px 10px;
+    }
+  };
+  .remove-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+.cart-empty {
+  margin: 100px;
+}

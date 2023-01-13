@@ -1,0 +1,34 @@
+
+<ng-template #emptyBlock>
+  <div class="cart-empty">
+    <h2>The cart is empty</h2>
+  </div>
+</ng-template>
+
+<div class="container" *ngIf="cart.length; else emptyBlock">
+  <div class="body" *ngFor="let product of cart let i = index">
+    <div class="imageBlock">
+      <img [src]="product.image" alt="#">
+    </div>
+    <div>
+      <button (click)="plusItemToCart(product)" mat-raised-button color="primary">+</button>
+      <span>amount: {{product.quantity}}</span>
+      <button (click)="minusItemFromCart(product)" mat-raised-button color="primary">-</button>
+    </div>
+    <div class="descriptionBlock">
+      <span>Title — {{product.title | titlecase}}</span>
+      <span>Author — {{product.author}}</span>
+      <span>Jenre — {{product.jenre}}</span>
+      <span>Price — {{product.price | currency}}</span>
+      <span>Pages — {{product.details.pages}}</span>
+      <br>
+      <hr>
+      <span>Year of publication — {{product.details.yearOfPublication}}</span>
+      <span>Cover — {{product.details.cover}}</span>
+      <span>Language — {{product.details.language}}</span>
+    </div>
+    <div class="remove-button">
+      <button mat-raised-button color="warn" (click)="removeItemFromBasket(product.id)">Remove</button>
+    </div>
+  </div>
+</div>

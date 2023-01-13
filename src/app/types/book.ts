@@ -13,7 +13,8 @@ export interface IBook extends IObjectKeys {
   inStock: boolean,
   price: number,
   jenre: string,
-  details: IDetails
+  details: IDetails,
+  quantity: number
 }
 
 export interface IDetails {

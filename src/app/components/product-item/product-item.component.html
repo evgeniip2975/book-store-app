@@ -4,7 +4,7 @@
     <div class="img">
       <img [src]="product.image" alt="picture">
     </div>
-    <div>Raite {{product.rate}}</div>
+    <div>Rate {{product.rate}}</div>
     <div class="body">
       <div class="title">
         <h4>{{product.title}}</h4>
@@ -16,6 +16,6 @@
     </div>
   </div>
   <div class="button">
-    <button mat-flat-button color="primary">Add to cart</button>
+    <button (click)="addToCart(product)" mat-flat-button color="primary" type="button">Add to cart</button>
   </div>
 </div>

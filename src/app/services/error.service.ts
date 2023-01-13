@@ -8,13 +8,13 @@ export class ErrorService {
 
   constructor() { }
 
-  errors$ = new Subject<string>()
+  error$ = new Subject<string>()
 
   handle(message: string) {
-    this.errors$.next(message)
+    this.error$.next(message)
   }
 
   clear() {
-    this.errors$.next('')
+    this.error$.next('')
   }
 }

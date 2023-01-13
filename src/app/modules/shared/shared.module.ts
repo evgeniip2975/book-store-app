@@ -10,10 +10,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { GlobalErrorComponent } from '../global-error/global-error.component';
 
 
 @NgModule({
-  declarations: [FilterProductsPipe, SortProductsPipe, ProgressBarComponent,],
+  declarations: [FilterProductsPipe, SortProductsPipe, ProgressBarComponent, GlobalErrorComponent],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -29,6 +30,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     FilterProductsPipe,
     SortProductsPipe,
     ProgressBarComponent,
+    GlobalErrorComponent,
     MatButtonModule,
     MatIconModule,
     FormsModule,
